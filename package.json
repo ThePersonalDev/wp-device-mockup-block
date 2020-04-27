@@ -1,0 +1,29 @@
+{
+  "name": "wp-device-mockup-block",
+  "version": "1.0.0",
+  "description": "A Gutenberg block for displaying media inside device mockups",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:blocks",
+    "dev:blocks": "wp-scripts start assets/js/blocks/device-mockup.js --output-path=dist/js/blocks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThePersonalDev/wp-device-mockup-block.git"
+  },
+  "author": "Oz Ramos <thepersonaldev@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ThePersonalDev/wp-device-mockup-block/issues"
+  },
+  "homepage": "https://github.com/ThePersonalDev/wp-device-mockup-block#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^8.0.1",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-clean-dist": "0.0.6"
+  },
+  "dependencies": {
+    "@wordpress/components": "^9.4.1"
+  }
+}

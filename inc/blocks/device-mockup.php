@@ -10,7 +10,13 @@ add_action('init', function () {
     $assets['version']
   );
 
+  wp_register_style(
+    'tpd-device-mockup-css',
+    plugin_dir_url(WP_DEVICE_MOCKUP_BLOCK_PLUGIN_FILE) . 'assets/device-mockups.css'
+  );
+
   register_block_type('tpd/device-mockup', [
-    'editor_script' => 'tpd-device-mockup'
+    'editor_script' => 'tpd-device-mockup',
+    'editor_style' => 'tpd-device-mockup-css'
   ]);
 });

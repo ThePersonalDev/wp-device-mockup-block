@@ -7,6 +7,19 @@ const icon = createElement('svg', {viewBox: '0 0 448 512'},
 
 registerBlockType('tpd/device-mockups', {
   title: 'Device mockup',
-  category: 'theme_blocks',
-  icon
+  category: 'common',
+  icon,
+
+  edit: props => {
+    return (
+      <div className="device-wrapper">
+        <div className="device" data-device="iPhone5" data-orientation="portrait" data-color="black">
+          <div className="screen">
+          </div>
+          <div className="button">
+          </div>
+        </div>
+      </div>
+    )
+  }
 })

@@ -108,8 +108,22 @@ var icon = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement
 }));
 Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('tpd/device-mockups', {
   title: 'Device mockup',
-  category: 'theme_blocks',
-  icon: icon
+  category: 'common',
+  icon: icon,
+  edit: function edit(props) {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "device-wrapper"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "device",
+      "data-device": "iPhone5",
+      "data-orientation": "portrait",
+      "data-color": "black"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "screen"
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "button"
+    })));
+  }
 });
 
 /***/ }),

@@ -9,5 +9,5 @@
  * License URI: http://www.apache.org/licenses/LICENSE-2.0
  */
 
-define('WP_DEVICE_MOCKUP_BLOCK_PLUGIN_FILE', plugin_dir_path(__FILE__));
+define('WP_DEVICE_MOCKUP_BLOCK_PLUGIN_FILE', __FILE__);
 require plugin_dir_path(__FILE__) . '/inc/blocks/device-mockup.php';

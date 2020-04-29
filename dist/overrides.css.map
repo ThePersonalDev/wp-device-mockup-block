@@ -1,0 +1,1 @@
+{"version":3,"sources":["overrides.scss"],"names":[],"mappings":"AAAA;EACE;;AAEA;EACE;EACA","file":"overrides.css","sourceRoot":"..\\assets\\scss","sourcesContent":[".device {\r\n  z-index: 1;\r\n\r\n  .button {\r\n    border: none;\r\n    background: none;\r\n  }\r\n}"]}

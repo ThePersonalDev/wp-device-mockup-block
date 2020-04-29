@@ -4,8 +4,12 @@
   "description": "A Gutenberg block for displaying media inside device mockups",
   "main": "index.js",
   "scripts": {
-    "dev": "npm-run-all --parallel dev:blocks",
-    "dev:blocks": "wp-scripts start assets/js/blocks/device-mockup.js --output-path=dist/js/blocks"
+    "dev": "npm-run-all --parallel dev:blocks dev:frontend",
+    "dev:blocks": "wp-scripts start assets/js/blocks/device-mockup.js --output-path=dist/js/blocks",
+    "dev:frontend": "parcel assets/scss/overrides.scss",
+    "build": "npm-run-all build:frontend build:blocks",
+    "build:frontend": "parcel build assets/scss/overrides.scss",
+    "build:blocks": "wp-scripts build assets/js/blocks/device-mockup.js --output-path=dist/js/blocks"
   },
   "repository": {
     "type": "git",
@@ -21,7 +25,8 @@
     "@wordpress/scripts": "^8.0.1",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4",
-    "parcel-plugin-clean-dist": "0.0.6"
+    "parcel-plugin-clean-dist": "0.0.6",
+    "sass": "^1.26.5"
   },
   "dependencies": {
     "@wordpress/components": "^9.4.1"

@@ -1,0 +1,9 @@
+.device {
+  z-index: 1;
+}
+.device .button {
+  border: none;
+  background: none;
+}
+
+/*# sourceMappingURL=/overrides.css.map */

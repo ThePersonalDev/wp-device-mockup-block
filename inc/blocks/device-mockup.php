@@ -15,8 +15,13 @@ add_action('init', function () {
     plugin_dir_url(WP_DEVICE_MOCKUP_BLOCK_PLUGIN_FILE) . 'assets/device-mockups.css'
   );
 
+  wp_register_style(
+    'tpd-device-mockup-css-overrides',
+    plugin_dir_url(WP_DEVICE_MOCKUP_BLOCK_PLUGIN_FILE) . 'dist/overrides.css'
+  );
+
   register_block_type('tpd/device-mockup', [
     'editor_script' => 'tpd-device-mockup',
-    'editor_style' => 'tpd-device-mockup-css'
+    'editor_style' => ['tpd-device-mockup-css', 'tpd-device-mockup-css-overrides']
   ]);
 });

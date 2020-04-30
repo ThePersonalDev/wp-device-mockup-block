@@ -203,111 +203,234 @@ var deviceOpts = [{
 }];
 var deviceConfig = {
   Chromebook: {
-    orientation: ['portrait'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }],
     colors: ['black']
   },
   galaxyS3: {
-    orientation: ['portrait', 'landscape'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }, {
+      value: 'landscape',
+      label: 'Landscape'
+    }],
     colors: ['black', 'white']
   },
   galaxyS5: {
-    orientation: ['portrait', 'landscape'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }, {
+      value: 'landscape',
+      label: 'Landscape'
+    }],
     colors: ['black', 'white', 'gold']
   },
   galaxyTab4: {
-    orientation: ['portrait'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }],
     colors: ['black', 'white']
   },
   HtcOneM8: {
-    orientation: ['portrait', 'landscape'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }, {
+      value: 'landscape',
+      label: 'Landscape'
+    }],
     colors: ['black']
   },
   HuawiP8: {
-    orientation: ['portrait', 'landscape'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }, {
+      value: 'landscape',
+      label: 'Landscape'
+    }],
     colors: ['gold']
   },
   iMac: {
-    orientation: ['portrait'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }],
     colors: ['black']
   },
   iPad: {
-    orientation: ['portrait', 'landscape'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }, {
+      value: 'landscape',
+      label: 'Landscape'
+    }],
     colors: ['black', 'white']
   },
   iPadAir2: {
-    orientation: ['portrait', 'landscape'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }, {
+      value: 'landscape',
+      label: 'Landscape'
+    }],
     colors: ['black', 'white', 'gold']
   },
   iPadPro: {
-    orientation: ['portrait', 'landscape'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }, {
+      value: 'landscape',
+      label: 'Landscape'
+    }],
     colors: ['black', 'white', 'gold']
   },
   iPhone6: {
-    orientation: ['portrait', 'landscape'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }, {
+      value: 'landscape',
+      label: 'Landscape'
+    }],
     colors: ['black', 'white', 'gold']
   },
   iPhone6Plus: {
-    orientation: ['portrait', 'landscape'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }, {
+      value: 'landscape',
+      label: 'Landscape'
+    }],
     colors: ['black', 'white', 'gold']
   },
   iPhoneSE: {
-    orientation: ['portrait', 'landscape'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }, {
+      value: 'landscape',
+      label: 'Landscape'
+    }],
     colors: ['black', 'white', 'gold', 'pink']
   },
   iPhone5: {
-    orientation: ['portrait', 'landscape'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }, {
+      value: 'landscape',
+      label: 'Landscape'
+    }],
     colors: ['black', 'white']
   },
   iPhone6Hand: {
-    orientation: ['portrait'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }],
     colors: ['black', 'white']
   },
   iPhone7Hand: {
-    orientation: ['portrait'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }],
     colors: ['black']
   },
   iPhone7Hand_2: {
-    orientation: ['portrait'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }],
     colors: ['black']
   },
   iPhone7: {
-    orientation: ['portrait', 'landscape'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }, {
+      value: 'landscape',
+      label: 'Landscape'
+    }],
     colors: ['black', 'white', 'gold', 'pink', 'red']
   },
   iPhoneX: {
-    orientation: ['portrait', 'landscape'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }, {
+      value: 'landscape',
+      label: 'Landscape'
+    }],
     colors: ['black']
   },
   Lumia930: {
-    orientation: ['portrait', 'landscape'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }, {
+      value: 'landscape',
+      label: 'Landscape'
+    }],
     colors: ['black', 'white']
   },
   Macbook: {
-    orientation: ['portrait'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }],
     colors: ['black', 'white', 'gold']
   },
   Macbook2015: {
-    orientation: ['portrait'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }],
     colors: ['black', 'white', 'gold']
   },
   MacbookPro2015: {
-    orientation: ['portrait'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }],
     colors: ['black']
   },
   Pixel: {
-    orientation: ['portrait'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }],
     colors: ['black', 'white']
   },
   SamsungTV: {
-    orientation: ['portrait'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }],
     colors: ['black']
   },
   SurfacePro3: {
-    orientation: ['landscape'],
+    orientation: [{
+      value: 'landscape',
+      label: 'Landscape'
+    }],
     colors: ['black']
   },
   SurfaceStudio: {
-    orientation: ['portrait'],
+    orientation: [{
+      value: 'portrait',
+      label: 'Portrait'
+    }],
     colors: ['black']
   }
 };
@@ -321,7 +444,8 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('tpd
       default: 'iPhone5'
     },
     orientation: {
-      type: 'string'
+      type: 'string',
+      default: 'portrait'
     },
     color: {
       type: 'string'
@@ -330,12 +454,25 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('tpd
   edit: function edit(_ref) {
     var attributes = _ref.attributes,
         setAttributes = _ref.setAttributes;
-    var device = attributes.device;
+    var device = attributes.device,
+        orientation = attributes.orientation,
+        color = attributes.color;
 
     var onDeviceChange = function onDeviceChange(newDevice) {
-      console.log('newDevice', newDevice);
       setAttributes({
         device: newDevice
+      });
+    };
+
+    var onOrientationChange = function onOrientationChange(newOrientation) {
+      setAttributes({
+        orientation: newOrientation
+      });
+    };
+
+    var onColorChange = function onColorChange(newColor) {
+      setAttributes({
+        color: newColor
       });
     };
 
@@ -346,12 +483,17 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('tpd
       value: device,
       options: deviceOpts,
       onChange: onDeviceChange
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["SelectControl"], {
+      label: "Orientation",
+      value: orientation,
+      options: deviceConfig[device].orientation,
+      onChange: onOrientationChange
     })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h1", null, device), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
       className: "device-wrapper"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
       className: "device",
       "data-device": device,
-      "data-orientation": "portrait",
+      "data-orientation": orientation,
       "data-color": "black"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
       className: "screen"

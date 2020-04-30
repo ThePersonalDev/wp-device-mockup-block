@@ -39,33 +39,33 @@ const deviceOpts = [
   {value: 'SurfaceStudio', label: 'Surface Studio'}
 ]
 const deviceConfig = {
-  Chromebook: {orientation: ['portrait'], colors: ['black']},
-  galaxyS3: {orientation: ['portrait', 'landscape'], colors: ['black', 'white']},
-  galaxyS5: {orientation: ['portrait', 'landscape'], colors: ['black', 'white', 'gold']},
-  galaxyTab4: {orientation: ['portrait'], colors: ['black', 'white']},
-  HtcOneM8: {orientation: ['portrait', 'landscape'], colors: ['black']},
-  HuawiP8: {orientation: ['portrait', 'landscape'], colors: ['gold']},
-  iMac: {orientation: ['portrait'], colors: ['black']},
-  iPad: {orientation: ['portrait', 'landscape'], colors: ['black', 'white']},
-  iPadAir2: {orientation: ['portrait', 'landscape'], colors: ['black', 'white', 'gold']},
-  iPadPro: {orientation: ['portrait', 'landscape'], colors: ['black', 'white', 'gold']},
-  iPhone6: {orientation: ['portrait', 'landscape'], colors: ['black', 'white', 'gold']},
-  iPhone6Plus: {orientation: ['portrait', 'landscape'], colors: ['black', 'white', 'gold']},
-  iPhoneSE: {orientation: ['portrait', 'landscape'], colors: ['black', 'white', 'gold', 'pink']},
-  iPhone5: {orientation: ['portrait', 'landscape'], colors: ['black', 'white']},
-  iPhone6Hand: {orientation: ['portrait'], colors: ['black', 'white']},
-  iPhone7Hand: {orientation: ['portrait'], colors: ['black']},
-  iPhone7Hand_2: {orientation: ['portrait'], colors: ['black']},
-  iPhone7: {orientation: ['portrait', 'landscape'], colors: ['black', 'white', 'gold', 'pink', 'red']},
-  iPhoneX: {orientation: ['portrait', 'landscape'], colors: ['black']},
-  Lumia930: {orientation: ['portrait', 'landscape'], colors: ['black', 'white']},
-  Macbook: {orientation: ['portrait'], colors: ['black', 'white', 'gold']},
-  Macbook2015: {orientation: ['portrait'], colors: ['black', 'white', 'gold']},
-  MacbookPro2015: {orientation: ['portrait'], colors: ['black']},
-  Pixel: {orientation: ['portrait'], colors: ['black', 'white']},
-  SamsungTV: {orientation: ['portrait'], colors: ['black']},
-  SurfacePro3: {orientation: ['landscape'], colors: ['black']},
-  SurfaceStudio: {orientation: ['portrait'], colors: ['black']}
+  Chromebook: {orientation: [{value: 'portrait', label: 'Portrait'}], colors: ['black']},
+  galaxyS3: {orientation: [{value: 'portrait', label: 'Portrait'}, {value: 'landscape', label: 'Landscape'}], colors: ['black', 'white']},
+  galaxyS5: {orientation: [{value: 'portrait', label: 'Portrait'}, {value: 'landscape', label: 'Landscape'}], colors: ['black', 'white', 'gold']},
+  galaxyTab4: {orientation: [{value: 'portrait', label: 'Portrait'}], colors: ['black', 'white']},
+  HtcOneM8: {orientation: [{value: 'portrait', label: 'Portrait'}, {value: 'landscape', label: 'Landscape'}], colors: ['black']},
+  HuawiP8: {orientation: [{value: 'portrait', label: 'Portrait'}, {value: 'landscape', label: 'Landscape'}], colors: ['gold']},
+  iMac: {orientation: [{value: 'portrait', label: 'Portrait'}], colors: ['black']},
+  iPad: {orientation: [{value: 'portrait', label: 'Portrait'}, {value: 'landscape', label: 'Landscape'}], colors: ['black', 'white']},
+  iPadAir2: {orientation: [{value: 'portrait', label: 'Portrait'}, {value: 'landscape', label: 'Landscape'}], colors: ['black', 'white', 'gold']},
+  iPadPro: {orientation: [{value: 'portrait', label: 'Portrait'}, {value: 'landscape', label: 'Landscape'}], colors: ['black', 'white', 'gold']},
+  iPhone6: {orientation: [{value: 'portrait', label: 'Portrait'}, {value: 'landscape', label: 'Landscape'}], colors: ['black', 'white', 'gold']},
+  iPhone6Plus: {orientation: [{value: 'portrait', label: 'Portrait'}, {value: 'landscape', label: 'Landscape'}], colors: ['black', 'white', 'gold']},
+  iPhoneSE: {orientation: [{value: 'portrait', label: 'Portrait'}, {value: 'landscape', label: 'Landscape'}], colors: ['black', 'white', 'gold', 'pink']},
+  iPhone5: {orientation: [{value: 'portrait', label: 'Portrait'}, {value: 'landscape', label: 'Landscape'}], colors: ['black', 'white']},
+  iPhone6Hand: {orientation: [{value: 'portrait', label: 'Portrait'}], colors: ['black', 'white']},
+  iPhone7Hand: {orientation: [{value: 'portrait', label: 'Portrait'}], colors: ['black']},
+  iPhone7Hand_2: {orientation: [{value: 'portrait', label: 'Portrait'}], colors: ['black']},
+  iPhone7: {orientation: [{value: 'portrait', label: 'Portrait'}, {value: 'landscape', label: 'Landscape'}], colors: ['black', 'white', 'gold', 'pink', 'red']},
+  iPhoneX: {orientation: [{value: 'portrait', label: 'Portrait'}, {value: 'landscape', label: 'Landscape'}], colors: ['black']},
+  Lumia930: {orientation: [{value: 'portrait', label: 'Portrait'}, {value: 'landscape', label: 'Landscape'}], colors: ['black', 'white']},
+  Macbook: {orientation: [{value: 'portrait', label: 'Portrait'}], colors: ['black', 'white', 'gold']},
+  Macbook2015: {orientation: [{value: 'portrait', label: 'Portrait'}], colors: ['black', 'white', 'gold']},
+  MacbookPro2015: {orientation: [{value: 'portrait', label: 'Portrait'}], colors: ['black']},
+  Pixel: {orientation: [{value: 'portrait', label: 'Portrait'}], colors: ['black', 'white']},
+  SamsungTV: {orientation: [{value: 'portrait', label: 'Portrait'}], colors: ['black']},
+  SurfacePro3: {orientation: [{value: 'landscape', label: 'Landscape'}], colors: ['black']},
+  SurfaceStudio: {orientation: [{value: 'portrait', label: 'Portrait'}], colors: ['black']}
 }
 
 registerBlockType('tpd/device-mockups', {
@@ -79,7 +79,8 @@ registerBlockType('tpd/device-mockups', {
       default: 'iPhone5'
     },
     orientation: {
-      type: 'string'
+      type: 'string',
+      default: 'portrait'
     },
     color: {
       type: 'string'
@@ -87,11 +88,16 @@ registerBlockType('tpd/device-mockups', {
   },
   
   edit: ({attributes, setAttributes}) => {
-    const {device} = attributes
+    const {device, orientation, color} = attributes
     
     const onDeviceChange = function (newDevice) {
-      console.log('newDevice', newDevice)
       setAttributes({device: newDevice})
+    }
+    const onOrientationChange = function (newOrientation) {
+      setAttributes({orientation: newOrientation})
+    }
+    const onColorChange = function (newColor) {
+      setAttributes({color: newColor})
     }
     
     return (
@@ -101,13 +107,16 @@ registerBlockType('tpd/device-mockups', {
             <PanelRow>
               <SelectControl label="Device" value={device} options={deviceOpts} onChange={onDeviceChange} />
             </PanelRow>
+            <PanelRow>
+              <SelectControl label="Orientation" value={orientation} options={deviceConfig[device].orientation} onChange={onOrientationChange} />
+            </PanelRow>
           </PanelBody>
         </InspectorControls>
 
         <h1>{device}</h1>
 
         <div className="device-wrapper">
-          <div className="device" data-device={device} data-orientation="portrait" data-color="black">
+          <div className="device" data-device={device} data-orientation={orientation} data-color="black">
             <div className="screen">
             </div>
             <div className="button">

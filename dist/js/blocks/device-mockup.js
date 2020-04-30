@@ -615,6 +615,12 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('tpd
     color: {
       type: 'string',
       default: 'black'
+    },
+    mediaID: {
+      type: 'number'
+    },
+    mediaURL: {
+      type: 'string'
     }
   },
   edit: function edit(_ref) {
@@ -622,7 +628,9 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('tpd
         setAttributes = _ref.setAttributes;
     var device = attributes.device,
         orientation = attributes.orientation,
-        color = attributes.color;
+        color = attributes.color,
+        mediaID = attributes.mediaID,
+        mediaURL = attributes.mediaURL;
 
     var onDeviceChange = function onDeviceChange(newDevice) {
       setAttributes({
@@ -639,6 +647,13 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('tpd
     var onColorChange = function onColorChange(newColor) {
       setAttributes({
         color: newColor
+      });
+    };
+
+    var onMediaSelect = function onMediaSelect(media) {
+      setAttributes({
+        mediaID: media.id,
+        mediaURL: media.url
       });
     };
 
@@ -659,6 +674,19 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('tpd
       value: color,
       options: deviceConfig[device].colors,
       onChange: onColorChange
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_2__["MediaUpload"], {
+      onSelect: onMediaSelect,
+      allowedTypes: "image",
+      value: mediaID,
+      render: function render(_ref2) {
+        var open = _ref2.open;
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+          className: mediaID ? 'image-button' : 'button button-large',
+          onClick: open
+        }, !mediaID ? 'Upload Image' : Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+          src: mediaURL
+        }));
+      }
     })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
       className: "device-wrapper"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
@@ -667,7 +695,10 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('tpd
       "data-orientation": orientation,
       "data-color": color
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      className: "screen"
+      className: "screen",
+      style: {
+        background: mediaURL ? "url(".concat(mediaURL, ")") : ''
+      }
     }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
       className: "button"
     }))));

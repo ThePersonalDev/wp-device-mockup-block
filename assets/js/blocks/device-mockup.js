@@ -1,7 +1,7 @@
 import {registerBlockType} from '@wordpress/blocks'
-import {InspectorControls} from '@wordpress/editor'
+import {MediaUpload, InspectorControls} from '@wordpress/editor'
 import {createElement} from '@wordpress/element'
-import {PanelBody, PanelRow, SelectControl} from '@wordpress/components'
+import {PanelBody, PanelRow, SelectControl, Button} from '@wordpress/components'
 
 const icon = createElement('svg', {viewBox: '0 0 448 512'},
 	createElement('path', {d: 'M400 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM224 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm176-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h328c6.6 0 12 5.4 12 12v312z'})
@@ -85,11 +85,17 @@ registerBlockType('tpd/device-mockups', {
     color: {
       type: 'string',
       default: 'black'
+    },
+    mediaID: {
+      type: 'number'
+    },
+    mediaURL: {
+      type: 'string'
     }
   },
   
   edit: ({attributes, setAttributes}) => {
-    const {device, orientation, color} = attributes
+    const {device, orientation, color, mediaID, mediaURL} = attributes
     
     const onDeviceChange = function (newDevice) {
       setAttributes({device: newDevice})
@@ -100,7 +106,13 @@ registerBlockType('tpd/device-mockups', {
     const onColorChange = function (newColor) {
       setAttributes({color: newColor})
     }
-    
+    const onMediaSelect = function (media) {
+      setAttributes({
+        mediaID: media.id,
+        mediaURL: media.url
+      })
+    }
+
     return (
       <>
         <InspectorControls>
@@ -114,12 +126,24 @@ registerBlockType('tpd/device-mockups', {
             <PanelRow>
               <SelectControl label="Color" value={color} options={deviceConfig[device].colors} onChange={onColorChange} />
             </PanelRow>
+            <PanelRow>
+              <MediaUpload
+                onSelect={onMediaSelect}
+                allowedTypes="image"
+                value={mediaID}
+                render={({open}) => (
+                  <Button className={mediaID ? 'image-button' : 'button button-large'} onClick={open}>
+                    {!mediaID ? 'Upload Image' : <img src={mediaURL} />}
+                  </Button>
+                )}
+              />
+            </PanelRow>
           </PanelBody>
         </InspectorControls>
 
         <div className="device-wrapper">
           <div className="device" data-device={device} data-orientation={orientation} data-color={color}>
-            <div className="screen">
+            <div className="screen" style={{background: mediaURL ? `url(${mediaURL})` : ''}}>
             </div>
             <div className="button">
             </div>

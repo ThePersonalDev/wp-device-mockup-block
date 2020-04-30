@@ -10,6 +10,7 @@ add_action('init', function () {
     $assets['version']
   );
 
+  // @see https://github.com/pixelsign/html5-device-mockups/blob/master/dist/device-mockups.css
   wp_register_style(
     'tpd-device-mockup-css',
     plugin_dir_url(WP_DEVICE_MOCKUP_BLOCK_PLUGIN_FILE) . 'assets/device-mockups.css'

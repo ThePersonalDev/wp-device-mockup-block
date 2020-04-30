@@ -1,7 +1,7 @@
 .device {
   z-index: 1;
 }
-.device .button {
+.device .button, .device .button:hover {
   border: none;
   background: none;
 }
